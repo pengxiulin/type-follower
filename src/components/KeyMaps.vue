@@ -8,7 +8,7 @@
 export default {
   name: 'KeyMaps',
   props: {
-    msg: String
+    schema: Object
   }
 }
 </script>

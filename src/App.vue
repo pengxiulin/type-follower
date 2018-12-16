@@ -1,14 +1,13 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/xiaohe.png"/> -->
-    <KeyMaps msg="Welcome to Your Vue.js App"/>
+    <KeyMaps class="bottom" :schema="schema"/>
     <dl>
       <dt>示例文字</dt>
       <dd>
         <p>{{text.value.trim()}}</p>
       </dd>
     </dl>
-    <textarea autofocus>{{text.value.trim().substr(0, 18)}}</textarea>
     <ul>
       <li>简洁的输入 - copy模式</li>
       <li>可选择若干示例文字</li>
@@ -16,6 +15,11 @@
       <li>[后置]打字速度统计</li>
       <li>Electron-始终在最前方的键盘图模式</li>
     </ul>
+    <div>
+      <pre>getSelection().rangeCount</pre>
+      <pre>window.getSelection().getRangeAt(0).getBoundingClientRect()</pre>
+      <pre>getSelection().isCollapsed</pre>
+    </div>
   </div>
 </template>
 
@@ -101,6 +105,8 @@ export default {
 <style>
 html {
   background: #8FDBCB;
+  font-size: 24px;
+  font-family: 'STKaiti';
 }
 html, body, dl, dt, dd {
   margin:0;
@@ -108,8 +114,6 @@ html, body, dl, dt, dd {
 }
 dd {
   height: 80px;
-  font-size: 24px;
-  font-family: monospace;
   color: #2c3e50;
 }
 textarea {
@@ -121,5 +125,9 @@ textarea {
   outline: none;
   font-family: monospace;
   font-size: 24px;
+}
+.bottom {
+  position: fixed;
+  bottom: 0;
 }
 </style>
